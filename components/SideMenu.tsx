@@ -27,6 +27,7 @@ import {
 } from "../navigation/navigationService";
 import { RootStackParamList } from "../navigation/navigator";
 import { clearAuthData } from "../services/AsyncStorageService";
+import { getVersion } from "../services/Util";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const MENU_WIDTH = Math.min(SCREEN_WIDTH * 0.78, 320);
@@ -259,7 +260,7 @@ const SideMenuPanel: React.FC<{
         </View>
 
         <View style={styles.panelFooter}>
-          <Text style={styles.footerText}>Future Finance v1.0.0</Text>
+          <Text style={styles.footerText}>Future Finance {getVersion()}</Text>
         </View>
       </Animated.View>
     </View>

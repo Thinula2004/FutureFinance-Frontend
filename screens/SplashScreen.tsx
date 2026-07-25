@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, Animated, Easing } from "react-native";
 import { clearAuthData, getToken } from "../services/AsyncStorageService";
 import { navigateAndReset } from "../navigation/navigationService";
 import { getProfile } from "../controllers/userController";
-import Constants from "expo-constants";
+import { getVersion } from "../services/Util";
 
 const COLORS = {
   background: "#000000",
@@ -126,7 +126,7 @@ export default function SplashScreen() {
         </View>
       </View>
 
-      <Text style={styles.footerText}>V{Constants.expoConfig?.version}</Text>
+      <Text style={styles.footerText}>{getVersion()}</Text>
     </View>
   );
 }
